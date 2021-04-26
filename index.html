@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+				
+				//var check=
+				function checkPassword(form)
+			 	{
+					 //let form=document.getElementsByClassName("form")
+                	 var name=form.name.value;
+					 var password1 = form.password1.value;
+				
+				//var btn = document.getElementsByClassName("btn");
+				
+				//If username and password are correct
+				if (name=="admin" && password1 == "12345"){
+					//window.location.href = '/path';
+					//const home="todoHomepage.html";
+					//window.location.href = "todoHomepage.html";
+					console.log("Into redirecting function");
+					
+					alert("Password Match: Welcome to To DO IT!");	
+					alert("redirecting");
+									
+					return true;
+
+				}
+				// If password not entered
+				else if (password1 == ''){
+					alert ("Please enter Password");
+					return false;
+				}
+					
+				
+                //If username not 'admin'
+                else if(name !='admin'){
+					alert("Please enter correct username");
+                    return false;
+				}
+                    
+                // If Not same return False.	
+				else if (password1 != "12345") {
+					alert ("Password did not match: Please try again...");
+					return false;
+				}
+
+				// If same return True.
+				else{
+					alert("Re enter credentials");
+					return false;
+				}
+				
+				
+			}
+			
+
+			
+			
+		</script>
+		<style>
+			.todo {
+				font-size:40px;
+				font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+				color:green;
+				font-weight:bold;
+				text-align:center;
+			}
+			.todosub {
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:17px;
+				text-align:center;
+				margin-bottom:20px;
+			}
+			body{
+				background:paleturquoise;
+				
+			}
+			.quote{
+				font-size:15px;
+				font-family:fantasy;
+				text-align:center;
+
+			}
+			.table{
+				font-size:15px;
+				font-family:cursive;
+				text-align:center;
+
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class = "todo">To Do It !</div>
+		<div class = "todosub">Don't just sit there .Plan it. DO IT!</div>
+		<p class ="quote">'You will never 'find' time for anything. If you want time, you must make it.' - Charles Buxton</p>
+		<form class="form" onsubmit="return checkPassword(this)" action="todoHomepage.html">
+		<table class ="table" border = 1 align = "center">
+			<tr>
+				<!-- Enter Username -->
+				<td>Username:</td>
+				<td><input type = text name = name size = 25></td>
+			</tr>
+			<tr>
+				<!-- Enter Password. -->
+				<td>Password:</td>
+				<td><input type = password name = password1 size = 25></td>
+			</tr>
+			
+				<!-- To Confirm Password. 
+			<tr>
+				<td>Confirm Password:</td>
+				<td><input type = password name = password2 size = 25></td>
+			</tr>
+			-->
+			<tr>
+				<td colspan = 2 align = right>
+				<input class="btn" type = submit name = submit value = "Log In" ></td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>					
